@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Travel_packages extends Model
 {
@@ -14,7 +15,6 @@ class Travel_packages extends Model
     protected $fillable = [
         "title",
         "slug",
-        "thumbnail",
         "location",
         "about",
         "featured_event",
@@ -25,4 +25,9 @@ class Travel_packages extends Model
         "type",
         "price",
     ];
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(images::class, 'travel_packages_id');
+    }
 }

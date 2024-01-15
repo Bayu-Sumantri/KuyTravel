@@ -41,7 +41,8 @@
             <br>
             <br>
             <p class="card-description" style="text-align: center; font-size: 20px"> Basic form elements </p>
-            <form class="forms-sample">
+            <form class="forms-sample" action="{{ route('Travel.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
               <div class="form-group">
                 <label for="exampleInputName1">Tittle</label>
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Tittle" name="title">
@@ -50,22 +51,38 @@
                 <label for="exampleInputEmail3">Slug</label>
                 <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Slug" name="slug">
               </div>
-
               <div class="form-group">
-                <label for="exampleInputPassword4">Password</label>
-                <input type="text" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                <label for="exampleInputCity1">Location</label>
+                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location" name="location">
               </div>
               <div class="form-group">
-                <label for="exampleSelectGender">Gender</label>
-                <select class="form-control" id="exampleSelectGender">
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
+                <label for="exampleInputCity1">Featured Event</label>
+                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Featured Event" name="featured_event">
               </div>
-
-
-
-
+              <div class="form-group">
+                <label for="exampleInputCity1">Language</label>
+                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Language" name="language">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputCity1">Food</label>
+                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Food" name="foods">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputCity1">Depature Date</label>
+                <input class="form-control" type="date" placeholder="dd/mm/yyyy" name="departure_date">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputCity1">Duration</label>
+                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Duration" name="duration">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputCity1">Type</label>
+                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Type" name="type">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputCity1">Price</label>
+                <input type="number" class="form-control" id="exampleInputCity1" placeholder="Price" name="price">
+              </div>
 
 
               <div class="mb-3">
@@ -81,16 +98,9 @@
 
 
 
-
-
-
               <div class="form-group">
-                <label for="exampleInputCity1">City</label>
-                <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
-              </div>
-              <div class="form-group">
-                <label for="exampleTextarea1">Textarea</label>
-                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                <label for="exampleTextarea1">About</label>
+                <textarea class="form-control" id="exampleTextarea1" rows="4" name="about"></textarea>
               </div>
               <button type="submit" class="btn btn-primary mr-2">Submit</button>
               <button class="btn btn-dark">Cancel</button>
